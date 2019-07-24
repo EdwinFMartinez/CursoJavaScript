@@ -20,14 +20,16 @@ function settings($stateProvider, $urlRouterProvider){
 
     var aboutState = {
         name:'home.about',
-        url:'/about',
-        templateUrl:'views/about.html'
+        url:'/about/{id}',
+        templateUrl:'views/about.html',
+        controller:'AboutCtrl as vm' 
     }
 
     var detailState = {
         name:'home.detail',
-        url:'/detail',
-        templateUrl:'views/detail.html'
+        url:'/detail/{id}',
+        templateUrl:'views/detail.html',
+        controller:'DetailCtrl as vm'
     }
 
     $stateProvider.state(homeState);

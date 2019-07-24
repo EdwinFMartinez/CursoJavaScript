@@ -1,4 +1,12 @@
-<details>
-    <summary>aqui va el nombre de servicio</summary>
-    <p>informacion completa del servicio</p>
-</details>
+<div class="jumbotron">
+    <div class="row marketing" ng-if="vm.service != null">
+        <div ng-style="{ 'background': 'url({{vm.service.image}})' }">
+            <h4>Nombre del servicio:</h4>
+            <p>{{vm.service.name}}</p>
+            <h4>Valor del servicio:</h4>
+            <p>{{vm.service.cost}}</p>
+            <h4>Descripción del servicio:</h4>
+            <p>{{vm.service.description}}</p>
+        </div>
+    </div>
+</div>
