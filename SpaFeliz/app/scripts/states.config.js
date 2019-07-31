@@ -20,7 +20,7 @@ function settings($stateProvider, $urlRouterProvider){
 
     var aboutState = {
         name:'home.about',
-        url:'/about/{id}',
+        url:'/about',
         templateUrl:'views/about.html',
         controller:'AboutCtrl as vm' 
     }
@@ -32,10 +32,19 @@ function settings($stateProvider, $urlRouterProvider){
         controller:'DetailCtrl as vm'
     }
 
+    var bookState = {
+        name:'home.book',
+        url:'/book',
+        templateUrl:'views/book.html',
+        controller:'BookcontrollerCtrl as vm'
+    }
+
     $stateProvider.state(homeState);
     $stateProvider.state(mainState);
     $stateProvider.state(aboutState);
     $stateProvider.state(detailState);
+    $stateProvider.state(bookState);
+
 
     $urlRouterProvider.when('','/');
 }

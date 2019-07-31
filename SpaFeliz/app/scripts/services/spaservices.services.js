@@ -20,8 +20,6 @@ function spaServicesHttp($http, $q, httpConfig) {
   return services;
 
   function getAll() {
-    console.log("entro a get all");
-    
     var defered = $q.defer();
     var promise = defered.promise;
 

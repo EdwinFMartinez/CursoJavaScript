@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron" [ngStyle]="{'background': url({https://pur.vamtam.com/wp-content/uploads/2017/11/parallax4.jpg}})}">
   <h1>!El cuidado y tu bienestar¡</h1>
   <p class="lead">
     Cuidamos de tu salud y belleza con los mejores especialistas
@@ -12,9 +12,10 @@
       <div class="content-service">
         <h4>{{ item.name }}</h4>
         <p>{{ item.description }}</p>
-        <p>COP {{ item.cost }}</p>
+        <p>{{ item.cost | currencyFormat}}</p>
       </div>
     </a>
   </div>
+  
   <p>* Reserva cualquiera de nuestros servicios con facilidad</p>
 </div>
