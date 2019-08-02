@@ -11,14 +11,16 @@ angular.module('spaFelizApp')
   .controller('BookcontrollerCtrl',bookcontrollerCtrl);
   
 
-  bookcontrollerCtrl.$inject = ['spaServicesHttp'];
+  bookcontrollerCtrl.$inject = ['spaServicesHttp','spaServicesBook'];
 
-  function bookcontrollerCtrl(spaServicesHttp) {
+  function bookcontrollerCtrl(spaServicesHttp, spaServicesBook) {
     
     var vm = this;
     vm.$onInit = onInit;
+    vm.form = {};
     vm.submitbook = submitbook;
     vm.loadSpaServiceshttp = loadSpaServiceshttp;
+    vm.submitbook = submitbook;
 
     function onInit(){
       vm.loadSpaServiceshttp();
@@ -26,7 +28,13 @@ angular.module('spaFelizApp')
 
     function submitbook(){
       console.log('ENTRO AL SUBMITTTTTTTTTTTTTTT');
-      
+      spaServicesBook.saveBookServices(vm.form)
+      .then(function(result){
+        alert("Reserva Exitosa");
+      })
+      .catch(function(err){
+         console.log(err);
+      });
     }
 
     function loadSpaServiceshttp(){

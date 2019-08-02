@@ -10,17 +10,31 @@
  */
 angular.module('spaFelizApp').factory('spaServicesBook', spaServicesBook);
 
-spaServices.$inject = [];
+spaServices.$inject = ['$http', '$q', 'httpConfig'];
 
-function spaServicesBook() {
-var services = {
+function spaServicesBook($http, $q, httpConfig) {
+ let services = {
     saveBookServices: saveBookServices
   }
 
   return services;
 
   function saveBookServices(body){
-       console.log("pruebas");
+    var defered = $q.defer();
+    var promise = defered.promise;
+
+    const url = httpConfig.url + httpConfig.services.save;
+    $http.post(url,body)
+      .then(function (data) {
+          defered.resolve(data);
+          
+      })
+      .catch(function (error) {
+        console.log(error);
+        defered.reject(error);
+
+      });
+    return promise;
        
   }
 }  

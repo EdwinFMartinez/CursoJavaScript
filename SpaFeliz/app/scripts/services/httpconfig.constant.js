@@ -13,6 +13,7 @@ angular.module('spaFelizApp')
 
     services: {
       all: 'services',
-      byId: 'services/'
+      byId: 'services/',
+      save: 'book'
     }
   });
