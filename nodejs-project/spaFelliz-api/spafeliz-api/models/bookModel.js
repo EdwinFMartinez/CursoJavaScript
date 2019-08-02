@@ -7,5 +7,9 @@ module.exports = conn.define('reservation',{
     id_services: Sequelize.INTEGER,
     mail: Sequelize.STRING,
     names: Sequelize.STRING,
-    hour_reservaartion: Sequelize.STRING
-})
+    hour_reservation: Sequelize.STRING
+},{
+    timestamps: false,
+    freezeTableName:true
+}
+)
